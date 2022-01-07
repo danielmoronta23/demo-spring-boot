@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,6 +44,11 @@ public abstract class CrudBasico<T, ID> implements ICrud<T, ID> {
     @Override
     public List<T> obtenerTodo() {
         return getDao().findAll();
+    }
+
+    @Override
+    public Page<T> obterResultadoPaginado(Pageable pageable){
+        return getDao().findAll(pageable);
     }
 
 
