@@ -9,7 +9,7 @@ public interface ICrud<T, ID> {
 
     T buscarPorId(ID id);
 
-    List<T> obtenerTodo(T entity);
+    List<T> obtenerTodo();
 
     boolean borrar(T entity);
 

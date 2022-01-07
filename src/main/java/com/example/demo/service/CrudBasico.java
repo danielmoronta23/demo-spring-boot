@@ -40,7 +40,7 @@ public abstract class CrudBasico<T, ID> implements ICrud<T, ID> {
     }
 
     @Override
-    public List<T> obtenerTodo(T entity) {
+    public List<T> obtenerTodo() {
         return getDao().findAll();
     }
 

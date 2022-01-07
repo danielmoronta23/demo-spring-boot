@@ -3,6 +3,8 @@ package com.example.demo.service;
 import com.example.demo.model.entities.Autor;
 import com.example.demo.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,10 @@ public class AutorService extends CrudBasico<Autor, Long> {
     public ArrayList<Autor> findByNombre(String nombre){
         return autorRepository.findByNombre(nombre);
 
+    }
+
+    public Page<Autor> obtenerAutorPaginado(Pageable pageable){
+        return autorRepository.findAll(pageable);
     }
 
 
